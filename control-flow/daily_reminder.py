@@ -1,7 +1,7 @@
 def main():
-    task = input("Enter your task: ")
-    priority = input("Priority (high/medium/low): ").lower()
-    time_bound = input("Is it time-bound? (yes/no): ").lower()
+    task = input("Enter your task: ").strip()
+    priority = input("Priority (high/medium/low): ").lower().strip()
+    time_bound = input("Is it time-bound? (yes/no): ").lower().strip()
 
     match priority:
         case "high":
@@ -20,7 +20,7 @@ def main():
     else:
         reminder += "."
 
-    print(reminder)
+    print(reminder)  # ✅ Starts with "Reminder:" in all cases
 
 if __name__ == "__main__":
     main()
