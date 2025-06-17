@@ -7,13 +7,12 @@ def safe_divide(numerator, denominator):
         result = numerator / denominator
     except ZeroDivisionError:
         print("Error: Cannot divide by zero.")
-        return None
+        return
     except ValueError:
         print("Error: Please enter numeric values only.")
-        return None
+        return
     else:
-        print(f"Result: {result}")
-        return result
+        print(f"The result of the division is {result}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
