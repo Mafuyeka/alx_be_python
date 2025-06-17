@@ -1,14 +1,18 @@
-#!/usr/bin/env python3
+# programming_paradigm/main.py
 
-from library_system import Library
+import sys
+from robust_division_calculator import safe_divide
 
-lib = Library()
-lib.add_book("The Alchemist", "Paulo Coelho")
-lib.add_book("1984", "George Orwell")
-lib.list_books()
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python main.py <numerator> <denominator>")
+        sys.exit(1)
 
-lib.borrow_book("1984")
-lib.list_books()
+    numerator = sys.argv[1]
+    denominator = sys.argv[2]
 
-lib.return_book("1984")
-lib.list_books()
+    result = safe_divide(numerator, denominator)
+    print(result)
+
+if __name__ == "__main__":
+    main()
