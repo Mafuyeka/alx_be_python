@@ -1,13 +1,12 @@
 import sys
 
-def safe_divide(a, b):
+def safe_divide(numerator, denominator):
     try:
-        # Convert inputs to float
-        numerator = float(a)
-        denominator = float(b)
+        numerator = float(numerator)      # convert to float explicitly
+        denominator = float(denominator)  # convert to float explicitly
         
-        # Attempt division
         result = numerator / denominator
+        
     except ZeroDivisionError:
         print("Error: Cannot divide by zero.")
         return None
@@ -20,6 +19,6 @@ def safe_divide(a, b):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python3 main.py <numerator> <denominator>")
+        print("Usage: python3 robust_division_calculator.py <numerator> <denominator>")
     else:
         safe_divide(sys.argv[1], sys.argv[2])
