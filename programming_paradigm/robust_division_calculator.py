@@ -2,16 +2,14 @@ import sys
 
 def safe_divide(numerator, denominator):
     try:
-        numerator = float(numerator)      # convert to float explicitly
-        denominator = float(denominator)  # convert to float explicitly
-        
+        numerator = float(numerator)
+        denominator = float(denominator)
         result = numerator / denominator
-        
     except ZeroDivisionError:
         print("Error: Cannot divide by zero.")
         return None
     except ValueError:
-        print("Error: Non-numeric value provided.")
+        print("Error: Please enter numeric values only.")
         return None
     else:
         print(f"Result: {result}")
